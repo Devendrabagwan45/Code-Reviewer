@@ -30,6 +30,7 @@ main .right {
 
 main .left {
   background-color: #1c1818;
+  color: white;
   position: relative;
 }
 .button {
