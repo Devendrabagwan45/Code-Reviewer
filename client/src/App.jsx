@@ -10,11 +10,8 @@ import prism from "prismjs";
 import axios from "axios";
 
 const App = () => {
-  const [count, setCount] = useState(0);
   const [review, setReview] = useState("");
-  const [code, setCode] = useState(`function sum() {
-                return 1 + 1;
-              }`);
+  const [code, setCode] = useState(`Your Code here...`);
   useEffect(() => {
     prism.highlightAll();
   }, []);
