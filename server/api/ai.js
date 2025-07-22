@@ -1,7 +1,9 @@
-let express = require("express");
+const express = require("express");
 require("dotenv/config");
-let aiRoutes = require("./src/routes/ai.routes");
+
+const aiRoutes = require("../src/routes/ai.routes");
 const cors = require("cors");
+const serverless = require("serverless-http");
 
 const app = express();
 app.use(cors());
@@ -9,11 +11,11 @@ app.use(express.json());
 app.use("/ai", aiRoutes);
 
 if (process.env.NODE_ENV !== "production") {
-  let PORT = process.env.PORT;
+  let PORT = process.env.PORT || 8080;
   app.listen(PORT, () => {
     console.log("Server is running on PORT : ", PORT);
   });
 }
 
-module.exports = app;
-// For production, the server will be started by the process manager or cloud service.
+// Export the serverless handler for Vercel
+module.exports = serverless(app);
