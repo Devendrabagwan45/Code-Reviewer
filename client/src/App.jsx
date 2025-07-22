@@ -9,6 +9,9 @@ import "highlight.js/styles/github-dark.css";
 import prism from "prismjs";
 import axios from "axios";
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+axios.defaults.baseURL = backendUrl;
+
 const App = () => {
   const [review, setReview] = useState("");
   const [code, setCode] = useState(`Your Code here...`);
@@ -17,7 +20,7 @@ const App = () => {
   }, []);
 
   async function reviewCode() {
-    const response = await axios.post("/api/ai/get-review", {
+    const response = await axios.post("/ai/get-review", {
       code,
     });
     setReview(response.data);
