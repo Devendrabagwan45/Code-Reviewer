@@ -17,5 +17,7 @@ if (process.env.NODE_ENV !== "production") {
   });
 }
 
-// Export the serverless handler for Vercel
-module.exports = serverless(app);
+// // Export the serverless handler for Vercel
+// module.exports = serverless(app);
+
+module.exports = app; // Export the Express app for Vercel
