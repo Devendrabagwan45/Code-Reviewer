@@ -36,6 +36,7 @@ const model = ai.getGenerativeModel({
                 	•	Balance strictness with encouragement :- highlight strengths while pointing out weaknesses.
 
                 Output Example:
+                if(user have question you should anwser in your way ok you should provide only clear code instead of its review and other improvements don't need )
 
                 ❌ Bad Code:
                 \\\`javascript

@@ -8,6 +8,7 @@ import "highlight.js/styles/github-dark.css";
 
 import prism from "prismjs";
 import axios from "axios";
+import Galaxy from "./assets/GalaxyAnimation";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 axios.defaults.baseURL = backendUrl;
@@ -27,6 +28,7 @@ const App = () => {
   }
   return (
     <main>
+      <Galaxy background={true} />
       <div className="left">
         <div className="code">
           <Editor
@@ -49,6 +51,7 @@ const App = () => {
           Review
         </div>
       </div>
+
       <div className="right">
         <Markdown rehypePlugins={[rehypeHighlight]}>{review}</Markdown>
       </div>
