@@ -62,6 +62,7 @@ main .right {
   padding: 1rem 2rem;
   font-size: 1.4rem;
   overflow: auto;
+  background-color: #9c9494;
 }
 
 /* Ensure content is visible over the galaxy background */
